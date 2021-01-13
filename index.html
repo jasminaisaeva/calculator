@@ -1,0 +1,143 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+      body{
+           background: rgb(245, 179, 190);
+           /* justify-content: center; */
+           /* align-items: center; */
+
+      }
+    </style>
+</head>
+
+<body>
+    <input id="number1" type="text"> 
+    <input id="number2" type="text">  <br></br>
+    <button onclick="onSub()">-</button>
+    <button onclick="onSolve()">+</button>
+    <button onclick="onMulti()">*</button>
+    <button onclick="onDiv()">/</button>
+    <span id="res">результат</span>
+    <script>
+        const onSolve = () => {
+            let num1 = document.getElementById("number1").value
+            let num2 = document.getElementById("number2").value
+            let result = parseInt(num1) +  parseInt(num2)
+            document.getElementById("res").innerHTML = `результат: ${result}`
+        }
+
+        const onSub = () => {
+            let num1 = document.getElementById("number1").value
+            let num2 = document.getElementById("number2").value
+            let result = parseInt(num1) -  parseInt(num2)
+            document.getElementById("res").innerHTML = `результат: ${result}`
+        }
+        const onDiv = () => {
+            let num1 = document.getElementById("number1").value
+            let num2 = document.getElementById("number2").value
+            let result = parseInt(num1) /  parseInt(num2)
+            document.getElementById("res").innerHTML = `результат: ${result}`
+        }
+        const onMulti = () => {
+            let num1 = document.getElementById("number1").value
+            let num2 = document.getElementById("number2").value
+            let result = parseInt(num1) *  parseInt(num2)
+            document.getElementById("res").innerHTML = `результат: ${result}`
+        } 
+     </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#calculator{
+    width:173px;
+    max-width: 173px;
+    border:1px black solid;
+    margin: 0 auto;
+    margin-top: 150px;
+    
+}
+.button{
+    width:55px;
+    margin-top: 5px;
+    background:rgb(240, 104, 228)
+}
+body{
+    user-select: none;
+    background:url(images/1561182942_2.jpg)
+    
+}
+.clean  {
+    width:173px;
+    background:rgb(252, 195, 237);
+}
+.clean:hover{
+    background-color: rgb(122, 208, 248);
+}
+.button:hover{
+background-color:rgb(122, 208, 248)
+
+}
+
+    </style>
+</head>
+<body>
+    <div id="calculator"> 
+        <div class="item input"> <form name="form"><input type="text" name="textview" readonly></form></div>
+<!-- <input type="text" id="inputCalculato"> -->
+<button class="button clean"onclick="clean()">C</button>
+<button class="button"onclick="insert('1')">1</button>
+<button class="button"onclick="insert('2')">2</button>
+<button class="button"onclick="insert('3')">3</button>
+<button class="button"onclick="insert('4')">4</button>
+<button class="button"onclick="insert('5')">5</button> 
+<button class="button"onclick="insert('6')">6</button>
+<button class="button"onclick="insert('7')">7</button>
+<button class="button"onclick="insert('8')">8</button>
+<button class="button"onclick="insert('9')">9</button>
+<button class="button" onclick="insert('0')">0</button>
+<button class="button" onclick="insert('+')">+</button>
+<button class="button" onclick="insert('-')">-</button>
+<button class="button" onclick="insert('*')">*</button>
+<button class="button" onclick="insert('/')">/</button>
+<button class="button" onclick="equal()">=</button>
+     </div>
+    
+     <script>
+        //  const onSolve = () => {
+        //     let num1 = document.getElementById("number1").value
+        //     let num2 = document.getElementById("number2").value
+        //     let result = parseInt(num1) +  parseInt(num2)
+        //     document.getElementById("res").innerHTML = `результат: ${result}`
+        // }
+function insert(num){
+    document.form.textview.value = 
+    document.form.textview.value + num ;
+}
+function clean (){
+    document.form.textview.value= "";
+}
+function back() {
+
+}
+function equal (){
+ var exp = document.form.textview.value;
+ if(exp){
+     document.form.textview.value = eval(exp);
+ }
+}
+
+
+     </script>
+
+</body>
+</html>
